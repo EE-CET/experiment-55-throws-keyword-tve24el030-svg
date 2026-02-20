@@ -1,19 +1,26 @@
-import java.util.Scanner;
 import java.io.IOException;
+import java.util.Scanner;
 
 public class ThrowsDemo {
     
-    // TODO: Define static method check(int n) that throws IOException
-    // If n < 0, throw new IOException()
-    // Else, print n
-
    
-        // TODO: Read n
-        
-        // TODO: try {
-        //     call check(n)
-        // } catch (IOException e) {
-        //     Print "Caught: IO Exception"
-        // }
-    
+    static void check(int n)throws IOException{
+        if(n<0){
+            throw new IOException();
+        }
+        else{
+            System.out.print(n);
+        }
+    }
+
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        int a=sc.nextInt();
+
+        try {
+            check(a);
+        } catch (IOException e) {
+            System.out.println("Caught: IO Exception");
+        }
+    }
 }
